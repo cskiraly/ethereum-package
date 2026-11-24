@@ -72,8 +72,8 @@ def new_port_spec(
     }
     if wait != NOT_PROVIDED_WAIT:
         kwargs["wait"] = wait
-    if host_ip != NOT_PROVIDED_HOST_IP:
-        kwargs["host_ip"] = host_ip
+    # seacast-devnet: Kurtosis 1.22.2's PortSpec has no host_ip (1.23.0's does). Dropped, so that the ports are
+    # published as before #1519 (74cdb68, 2026-11-13).
     return PortSpec(**kwargs)
 
 
